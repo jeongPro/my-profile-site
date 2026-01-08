@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPro - Frontend Developer</title>
+    <meta name="description" content="JPro - 프론트엔드 개발자, 응용SW개발자 포트폴리오">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#1a202c',
+                        'dark-card': '#2d3748',
+                        'coral': '#ff6b6b',
+                        'coral-dark': '#ff5252',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#1a202c] text-gray-100">
+
+    <!-- Navigation Header -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-[#1a202c]/95 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Name -->
+                <a href="#hero" class="text-2xl md:text-3xl font-bold text-white hover:text-coral transition-colors">
+                    JPro
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-10">
+                    <a href="#home" class="nav-link text-base text-gray-300 hover:text-coral transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-base text-gray-300 hover:text-coral transition-colors">About</a>
+                    <a href="#projects" class="nav-link text-base text-gray-300 hover:text-coral transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link text-base text-gray-300 hover:text-coral transition-colors">Contacts</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors">
+                    <svg id="menuIcon" class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="closeIcon" class="w-6 h-6 text-gray-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-[#2d3748] border-t border-gray-700">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="mobile-nav-link block text-gray-300 hover:text-coral transition-colors py-2">Home</a>
+                <a href="#about" class="mobile-nav-link block text-gray-300 hover:text-coral transition-colors py-2">About</a>
+                <a href="#projects" class="mobile-nav-link block text-gray-300 hover:text-coral transition-colors py-2">Projects</a>
+                <a href="#contact" class="mobile-nav-link block text-gray-300 hover:text-coral transition-colors py-2">Contacts</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 bg-[#1a202c] relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 border-4 border-coral/20 transform rotate-45"></div>
+        <div class="absolute bottom-20 right-10 w-40 h-40 border-4 border-coral/20 transform -rotate-45"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text Content -->
+                <div class="space-y-6 animate-fade-in">
+                    <div>
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+                            Hello<span class="text-coral">.</span>
+                        </h1>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="h-1 w-20 bg-coral"></div>
+                            <p class="text-2xl md:text-3xl text-gray-300">I'm JPro</p>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                            Software Developer
+                        </h2>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#projects" class="px-8 py-4 bg-coral hover:bg-coral-dark text-white rounded-lg font-semibold transform hover:scale-105 transition-all shadow-lg text-center">
+                            Got a project?
+                        </a>
+                        <a href="#about" class="px-8 py-4 border-2 border-gray-600 text-white rounded-lg font-semibold hover:border-coral hover:text-coral transition-all text-center">
+                            My resume
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Profile Image -->
+                <div class="flex justify-center md:justify-end">
+                    <div class="relative">
+                        <div class="w-80 h-80 rounded-full border-8 border-coral/30 overflow-hidden bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                            <span class="text-9xl">👨‍💻</span>
+                        </div>
+                        <!-- Decorative circles -->
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-4 border-coral/40 rounded-full"></div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 border-4 border-coral/40 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Tech Stack -->
+            <div class="mt-20 pt-12 border-t border-gray-800">
+                <div class="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12">
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-500 text-sm mb-1">Tech Stack</p>
+                        <p class="text-gray-400 font-mono">HTML5</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-500 text-sm mb-1">Backend</p>
+                        <p class="text-gray-400 font-mono">JAVA</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-500 text-sm mb-1">Database</p>
+                        <p class="text-gray-400 font-mono">DB</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-500 text-sm mb-1">Tools</p>
+                        <p class="text-gray-400 font-mono">Git</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-500 text-sm mb-1">Platform</p>
+                        <p class="text-gray-400 font-mono">Github</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services/Skills Section with Timeline -->
+    <section class="py-20 bg-[#1a202c]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Left: Services -->
+                <div class="space-y-8">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12">What I Do</h2>
+
+                    <!-- Service Items with Timeline -->
+                    <div class="space-y-8 relative">
+                        <!-- Timeline Line -->
+                        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-coral to-transparent hidden md:block"></div>
+
+                        <!-- Service 1 -->
+                        <div class="flex gap-6 items-start group">
+                            <div class="flex-shrink-0 w-12 h-12 bg-[#2d3748] rounded-lg flex items-center justify-center border border-gray-700 group-hover:border-coral transition-all">
+                                <svg class="w-6 h-6 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1 bg-[#2d3748]/50 p-6 rounded-lg border border-gray-700 hover:border-coral/50 transition-all">
+                                <h3 class="text-xl font-bold mb-2">Website Development</h3>
+                                <p class="text-gray-400">사용자 친화적이고 반응형 웹 애플리케이션을 개발합니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- Service 2 -->
+                        <div class="flex gap-6 items-start group">
+                            <div class="flex-shrink-0 w-12 h-12 bg-[#2d3748] rounded-lg flex items-center justify-center border border-gray-700 group-hover:border-coral transition-all">
+                                <svg class="w-6 h-6 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1 bg-[#2d3748]/50 p-6 rounded-lg border border-gray-700 hover:border-coral/50 transition-all">
+                                <h3 class="text-xl font-bold mb-2">App Development</h3>
+                                <p class="text-gray-400">확장 가능한 애플리케이션을 설계하고 구현합니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div class="flex gap-6 items-start group">
+                            <div class="flex-shrink-0 w-12 h-12 bg-[#2d3748] rounded-lg flex items-center justify-center border border-gray-700 group-hover:border-coral transition-all">
+                                <svg class="w-6 h-6 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1 bg-[#2d3748]/50 p-6 rounded-lg border border-gray-700 hover:border-coral/50 transition-all">
+                                <h3 class="text-xl font-bold mb-2">Database Management</h3>
+                                <p class="text-gray-400">효율적인 데이터베이스 설계 및 최적화를 제공합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: About Me -->
+                <div id="about" class="space-y-8">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8">About me</h2>
+                    <p class="text-gray-400 leading-relaxed text-lg">
+                        프론트엔드 개발과 응용 소프트웨어 개발에 열정을 가진 경력직 개발자입니다.
+                        HTML, JAVA, 데이터베이스를 활용하여 사용자 중심의 웹 애플리케이션을 구축하고,
+                        효율적이고 확장 가능한 솔루션을 제공합니다.
+                    </p>
+
+                    <!-- Statistics -->
+                    <div class="grid grid-cols-3 gap-6 pt-8">
+                        <div class="text-center bg-[#2d3748]/50 p-6 rounded-lg border border-gray-700">
+                            <div class="text-4xl font-bold text-coral mb-2">12<span class="text-coral">+</span></div>
+                            <p class="text-gray-400 text-sm">Completed<br>Projects</p>
+                        </div>
+                        <div class="text-center bg-[#2d3748]/50 p-6 rounded-lg border border-gray-700">
+                            <div class="text-4xl font-bold text-coral mb-2">95<span class="text-coral">%</span></div>
+                            <p class="text-gray-400 text-sm">Client<br>satisfaction</p>
+                        </div>
+                        <div class="text-center bg-[#2d3748]/50 p-6 rounded-lg border border-gray-700">
+                            <div class="text-4xl font-bold text-coral mb-2">3<span class="text-coral">+</span></div>
+                            <p class="text-gray-400 text-sm">Years of<br>experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-[#0f1419]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                My Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-[#2d3748]/50 rounded-xl overflow-hidden border border-gray-700 hover:border-coral/50 transform hover:scale-105 transition-all group">
+                    <div class="h-48 bg-gradient-to-br from-coral/20 to-transparent flex items-center justify-center text-6xl border-b border-gray-700">
+                        🚀
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-coral transition-colors">웹 애플리케이션</h3>
+                        <p class="text-gray-400 mb-4 leading-relaxed">
+                            사용자 친화적인 인터페이스와 반응형 디자인을 적용한 프로젝트
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-coral/10 text-coral rounded-full text-sm border border-coral/30">HTML</span>
+                            <span class="px-3 py-1 bg-coral/10 text-coral rounded-full text-sm border border-coral/30">JAVA</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="flex-1 text-center px-4 py-2 bg-coral hover:bg-coral-dark text-white rounded-lg transition-colors">
+                                GitHub
+                            </a>
+                            <a href="#" class="flex-1 text-center px-4 py-2 border border-gray-600 hover:border-coral text-gray-300 hover:text-coral rounded-lg transition-colors">
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-[#2d3748]/50 rounded-xl overflow-hidden border border-gray-700 hover:border-coral/50 transform hover:scale-105 transition-all group">
+                    <div class="h-48 bg-gradient-to-br from-coral/20 to-transparent flex items-center justify-center text-6xl border-b border-gray-700">
+                        💼
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-coral transition-colors">업무 관리 시스템</h3>
+                        <p class="text-gray-400 mb-4 leading-relaxed">
+                            효율적인 업무 처리를 위한 데이터베이스 최적화 시스템
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-coral/10 text-coral rounded-full text-sm border border-coral/30">JAVA</span>
+                            <span class="px-3 py-1 bg-coral/10 text-coral rounded-full text-sm border border-coral/30">DB</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="flex-1 text-center px-4 py-2 bg-coral hover:bg-coral-dark text-white rounded-lg transition-colors">
+                                GitHub
+                            </a>
+                            <a href="#" class="flex-1 text-center px-4 py-2 border border-gray-600 hover:border-coral text-gray-300 hover:text-coral rounded-lg transition-colors">
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-[#2d3748]/50 rounded-xl overflow-hidden border border-gray-700 hover:border-coral/50 transform hover:scale-105 transition-all group">
+                    <div class="h-48 bg-gradient-to-br from-coral/20 to-transparent flex items-center justify-center text-6xl border-b border-gray-700">
+                        📊
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-coral transition-colors">데이터 분석 도구</h3>
+                        <p class="text-gray-400 mb-4 leading-relaxed">
+                            데이터 시각화와 분석 기능을 제공하는 대시보드 앱
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-coral/10 text-coral rounded-full text-sm border border-coral/30">HTML</span>
+                            <span class="px-3 py-1 bg-coral/10 text-coral rounded-full text-sm border border-coral/30">DB</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="#" class="flex-1 text-center px-4 py-2 bg-coral hover:bg-coral-dark text-white rounded-lg transition-colors">
+                                GitHub
+                            </a>
+                            <a href="#" class="flex-1 text-center px-4 py-2 border border-gray-600 hover:border-coral text-gray-300 hover:text-coral rounded-lg transition-colors">
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[#1a202c]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
+                Get In Touch
+            </h2>
+            <div class="bg-[#2d3748]/50 rounded-2xl border border-gray-700 p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <p class="text-xl text-gray-400 mb-6 leading-relaxed">
+                        프로젝트 협업이나 문의사항이 있으시면 언제든지 연락주세요!
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Email -->
+                    <div class="flex items-center justify-center gap-4 p-6 bg-[#1a202c] rounded-lg border border-gray-700 hover:border-coral/50 transition-all">
+                        <div class="text-3xl">📧</div>
+                        <div>
+                            <p class="text-sm text-gray-500">Email</p>
+                            <a href="mailto:JPro@gmail.com" class="text-xl font-semibold text-coral hover:text-coral-dark transition-colors">
+                                JPro@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
+                        <a href="#" class="flex flex-col items-center justify-center gap-3 p-6 bg-[#1a202c] rounded-lg border border-gray-700 hover:border-coral hover:bg-coral/5 transition-all transform hover:scale-105">
+                            <span class="text-3xl">💼</span>
+                            <span class="font-semibold text-gray-300">LinkedIn</span>
+                        </a>
+                        <a href="#" class="flex flex-col items-center justify-center gap-3 p-6 bg-[#1a202c] rounded-lg border border-gray-700 hover:border-coral hover:bg-coral/5 transition-all transform hover:scale-105">
+                            <span class="text-3xl">🐱</span>
+                            <span class="font-semibold text-gray-300">GitHub</span>
+                        </a>
+                        <a href="#" class="flex flex-col items-center justify-center gap-3 p-6 bg-[#1a202c] rounded-lg border border-gray-700 hover:border-coral hover:bg-coral/5 transition-all transform hover:scale-105">
+                            <span class="text-3xl">📝</span>
+                            <span class="font-semibold text-gray-300">Blog</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <a href="mailto:JPro@gmail.com" class="inline-block px-8 py-4 bg-coral hover:bg-coral-dark text-white rounded-lg font-semibold transform hover:scale-105 transition-all shadow-lg">
+                        Send Message
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f1419] border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500">
+                &copy; 2024 JPro. All rights reserved.
+            </p>
+            <p class="text-gray-600 mt-2 text-sm">
+                Made with ❤️ and code
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
